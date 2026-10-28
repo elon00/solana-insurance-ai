@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "solana-insurance-ai": {
+      "tools": [
+        {
+          "name": "scan_svm_pool_volatility",
+          "description": "Scans Solana liquidity pool price feeds for oracle flash-crash anomalies",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "pool_address": {
+                "type": "string"
+              },
+              "tolerance_threshold": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "pool_address"
+            ]
+          }
+        },
+        {
+          "name": "settle_spl_indemnity",
+          "description": "Constructs atomic Solana transaction releasing SPL token insurance compensation",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "pool_address": {
+                "type": "string"
+              },
+              "indemnity_sol": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "pool_address",
+              "indemnity_sol"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
